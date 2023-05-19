@@ -10,6 +10,9 @@ export default function Header() {
                     <p className="mr-4 p-6">Home</p>
                 </Link>
                 <Link href="/sell-nft">
+                    <p className="mr-4 p-6">Sell my NFT</p>
+                </Link>
+                <Link href="/my-profile">
                     <p className="mr-4 p-6">My Profile</p>
                 </Link>
                 <ConnectButton moralisAuth={false} />
