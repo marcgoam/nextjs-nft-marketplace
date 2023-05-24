@@ -92,7 +92,7 @@ export default function NFTBox({
                 onError: (error) => {
                     console.log(error)
                 },
-                onSuccess: () => buySuccess(),
+                onSuccess: buySuccess,
             })
         }
     }
@@ -117,7 +117,6 @@ export default function NFTBox({
                             >
                                 <div className="p-2">
                                     <div className="flex flex-col items-center gap-2">
-                                        <div>#{tokenId}</div>
                                         <div className="italic text-sm">
                                             Owned by {sellerAddress}
                                         </div>

@@ -52,14 +52,16 @@ export default function ListingUpdate({
                 })
             }}
         >
-            <Input
-                label="Update Price (ETH)"
-                name="New Price"
-                type="number"
-                onChange={(event) => {
-                    setNewPrice(event.target.value)
-                }}
-            />
+            <div className="my-2">
+                <Input
+                    label="Update Price (ETH)"
+                    name="New Price"
+                    type="number"
+                    onChange={(event) => {
+                        setNewPrice(event.target.value)
+                    }}
+                />
+            </div>
         </Modal>
     )
 }
