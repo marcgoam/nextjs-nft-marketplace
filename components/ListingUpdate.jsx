@@ -26,6 +26,16 @@ export default function ListingUpdate({
         },
     })
 
+    const { runContractFunction: cancelListing } = useWeb3Contract({
+        abi: marketplaceAbi,
+        contractAddress: marketplaceAddress,
+        functionName: "cancelListing",
+        params: {
+            nftAddress: nftAddress,
+            tokenID: tokenId,
+        },
+    })
+
     async function listingSuccess() {
         dispatch({
             type: "success",
@@ -41,7 +51,14 @@ export default function ListingUpdate({
     return (
         <Modal
             isVisible={isVisible}
-            onCancel={onClose}
+            onCancel={() => {
+                cancelListing({
+                    onError: (error) => {
+                        console.log(error)
+                    },
+                    onSuccess: () => console.log("ok"),
+                })
+            }}
             onCloseButtonPressed={onClose}
             onOk={() => {
                 updateListing({
